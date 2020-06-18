@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Bienvenue !{% endblock %}</title>
+            <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset("css/css.css") }}" rel="stylesheet" type="text/css"/>
+            {% block stylesheets %}{% endblock %}
+
+
+    <body>
+         <div  id="page">
+            {% block menu %}
+                {% include 'menu.html.twig' %}
+                
+             {% endblock %}
+            {% block body %}{% endblock %}
+         </div>
+          <script src="{{ asset("js/jquery-3.5.1.slim.min") }}"></script>
+          <script src="{{ asset("js/popper.min.js") }}"></script>
+          <script src="{{ asset("js/bootstrap.min.js") }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

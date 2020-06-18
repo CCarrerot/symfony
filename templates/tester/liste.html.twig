@@ -1,0 +1,14 @@
+{# templates/tester/liste.html.twig #}
+
+{% extends "base.html.twig" %}{# hérite du template parent #}
+{% block title %}Liste des tests à faire{% endblock %}
+ {% block body %}
+     Liste des Tests à effectuer le {{dateDuJour}}
+ 
+     <nav class="nav">
+        {% for test in tests %}
+            <a class="nav-link" href="{{ path("affiche_test",{"id":test.id}) }}"> test {{ test.id }} </a>
+          {#<li><a href="test/{{i}}"> test {{ i }} </a></li>#}{# autre façon#}
+        {% endfor %}
+     </nav>   
+ {% endblock %}

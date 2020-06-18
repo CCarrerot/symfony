@@ -1,0 +1,16 @@
+{% if is_granted("ROLE_USER")  %} 
+   <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ path("liste")}}"> Liste des tests</a>
+    <a class="navbar-brand" href="{{path("app_logout")}}">Déconnexion</a>
+    {% if is_granted('ROLE_ADMIN') %}
+       <a class="navbar-brand" href="{{path("app_listeUsers")}}">Liste Utilisateurs(admin)</a>
+   {% endif %}
+  </nav>
+{% else %}
+    <nav class="navbar navbar-dark bg-dark">>
+
+       <a class="navbar-brand" href="{{path("app_login")}}">Connexion</a>
+       <a class="navbar-brand" href="{{path("app_register")}}">Créer son compte</a>
+    </nav>
+{% endif %}
+ <br>

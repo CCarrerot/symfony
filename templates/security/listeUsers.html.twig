@@ -1,0 +1,13 @@
+{# templates/tester/test.html.twig #}
+
+{% extends "base.html.twig" %}{# hérite du template parent #}
+{% block title %}liste des utilisateurs {% endblock %}
+ {% block body %}
+    <h1>Liste des utilisateurs</h1>
+     <ul>
+        {% for user in allUsers %}
+            <li>{{user.nom|title}} {{user.prenom|title}} {{user.username}}  </li>
+        
+        {% endfor %}
+     </ul>     
+ {% endblock %}

@@ -1,0 +1,18 @@
+{# templates/tester/test.html.twig #}
+
+{% extends "base.html.twig" %}{# hérite du template parent #}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/css.css') }}" >{% endblock %}
+{% block title %}Création d'un test {% endblock %}
+ {% block body %}
+     <br><br><br><br>
+     {% if save is not defined %}
+     <form method="POST">
+         <input type="text" name="Nom" placeholder="Nom"><br><br>
+         <label><input type="radio" name="etat" value="Encours">En cours</label><br>
+         <label><input type="radio" name="etat" value="arret">Arrêté</label><br><br>
+         <button>Créer</button><br>
+     </form>
+     {% else %}
+ <h1>Sauvegarde réussie !</h1>   
+    {% endif %}
+ {% endblock %}
