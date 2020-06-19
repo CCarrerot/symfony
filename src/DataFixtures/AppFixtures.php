@@ -4,28 +4,37 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use App\Entity\Utilisateur;
+use App\Entity\Test;
 
 class AppFixtures extends Fixture
 {
+     private $passwordEncoder;
+
+     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+     {
+         $this->passwordEncoder = $passwordEncoder;
+     }
+ 
     public function load(ObjectManager $manager)
     {
-                // création d'utilisateurs
-         $user = new Utilisateurs;
-		 $user->setUsername("cc");
+         // création d'utilisateurs
+         $user = new Utilisateur;
+		 $user->setEmail("cc@cc.fr");
 		  $user->setPassword($this->passwordEncoder->encodePassword(
             $user,
             'rascol'         ));
          $roles[] = 'ROLE_USER';         
-         $user->setRoles($roles) ;
-         $user->setEmail("cc") ;
-         $admin=new Utilisateurs;
-		 $user->setUsername("admin");
-		  $user->setPassword($this->passwordEncoder->encodePassword(
+         $user->setRoles($roles)->setNom("cc") ;
+         $manager->persist($user);
+         $admin=new Utilisateur;
+		 $admin->setEmail("admin@admin.fr");
+		  $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
             'admin'         ));
-         $roles[] = 'ROLE_ADMIN';
-        $user->setEmail("admin") ;         
-         $admin->setRoles($roles) ;
+         $roles[] = 'ROLE_ADMIN';         
+         $admin->setRoles($roles)->setNom("admin") ;
          $manager->persist($admin);
          
          // création de 2 tests

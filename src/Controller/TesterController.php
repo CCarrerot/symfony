@@ -1,20 +1,18 @@
 <?php
+
 namespace App\Controller;
 
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Test;
-/**
- * Description of TesterController
- * Controleur pour gérer les pages en lien avec les testeurs
- * @author Carrerot
- */
+
 class TesterController extends AbstractController
 {
-    /**
+   /**
      * fourni la liste des tests à effectuer
      * @Route("/tester/liste", name="liste")
      * @IsGranted("ROLE_USER")
@@ -64,18 +62,3 @@ class TesterController extends AbstractController
             return $this->render("tester/creer_test.html.twig");
      }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
