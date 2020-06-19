@@ -9,13 +9,26 @@
 
 
     <body>
-         <div  id="page">
+         <div class="container">
             {% block menu %}
                 {% include 'menu.html.twig' %}
                 
              {% endblock %}
             {% block body %}{% endblock %}
          </div>
+         <div class="d-flex flex-column">
+   <!-- Footer -->
+  <footer class="bg-white">
+  
+    <!-- Copyrights -->
+    <div class="bg-light py-2">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">© {{mon_parametre_twig}}</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End -->
+</div>
           <script src="{{ asset("js/jquery-3.5.1.slim.min.js") }}"></script>
           <script src="{{ asset("js/popper.min.js") }}"></script>
           <script src="{{ asset("js/bootstrap.min.js") }}"></script>

@@ -27,6 +27,7 @@ class TesterController extends AbstractController
         
         // récupération de tous les tests de la bdd
         $tests=$manager->getRepository(Test::class)->findAll();
+        $v=$this->getParameter('app.mon_parametre');
     //utilise le template present dans template/tester/liste.html.twig
         return $this->render("tester/liste.html.twig", ["dateDuJour" => $today,"tests"=>$tests]);
     }
