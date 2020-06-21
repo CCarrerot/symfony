@@ -5,8 +5,9 @@
 
 {% block body %}
 <form method="post">
-   
-    <img src="{{ asset("images/mecanumeric.jpg") }}" alt="Mécanuméric" id="logo"/>
+   <div class="text-center">
+    <img src="{{ asset("images/logo.png") }}" alt="Lycée Rascol" id="logo" class="img-thumbnail img-fluid" style="max-width: 30%;" />
+   </div>
     <h1 class="h3 mb-3 font-weight-normal">Saisissez vos identifiants</h1>
     <label for="inputUsername" class="sr-only">Nom d'utilisateur</label>
     <input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" placeholder="Nom d'utilisateur" required autofocus>
