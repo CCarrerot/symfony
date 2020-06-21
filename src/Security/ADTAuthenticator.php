@@ -71,7 +71,7 @@ class ADTAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
 
         if (!$user) {
             // fail authentication with a custom error
-            throw new CustomUserMessageAuthenticationException('Une erreur s\'est produite. Veuillez réitérer.');
+            throw new CustomUserMessageAuthenticationException('Invalid credentials.');
         }
 
         return $user;
