@@ -7,7 +7,7 @@
 * Créez une copie du fichier *.env* en le renommant *.env.local* .
 * Créez votre base de données (AutoTest) et définissez un utilisateur qui peut y accéder.
 * Mettez à jour le fichier .env.local en modifiant les variables 
-     * DATABASE_URL (exemple: DATABASE_URL=mysql://user:sonPwd@127.0.0.1:3306/AutoTest)
+     * DATABASE_URL (exemple: *DATABASE_URL=mysql://user:password@127.0.0.1:3306/AutoTest* où *user* est l'utilisateur et *password* son mot de passe qui accède au serveur Mysql ou Mariadb de le base de données *AutoTest* par le port *3306* par défaut)
      * APP_ENV=dev
 * Saisissez :
      * *symfony console make:migration*
