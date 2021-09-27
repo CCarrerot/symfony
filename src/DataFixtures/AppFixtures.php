@@ -3,26 +3,27 @@
 namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Entity\Utilisateur;
 use App\Entity\Test;
 
 class AppFixtures extends Fixture
 {
-     private $passwordEncoder;
+	  private $passwordHasher;
 
-     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+     public function __construct(UserPasswordHasherInterface $passwordHasher)
      {
-         $this->passwordEncoder = $passwordEncoder;
+         $this->passwordHasher = $passwordHasher;
      }
- 
+
     public function load(ObjectManager $manager)
     {
-         // création d'utilisateurs
+		
+		 // création d'utilisateurs
          $user = new Utilisateur;
 		 $user->setEmail("cc@cc.fr");
-		  $user->setPassword($this->passwordEncoder->encodePassword(
+		 $user->setPassword($this->passwordHasher->hashPassword(
             $user,
             'rascol'         ));
          $roles[] = 'ROLE_USER';         
@@ -30,7 +31,7 @@ class AppFixtures extends Fixture
          $manager->persist($user);
          $admin=new Utilisateur;
 		 $admin->setEmail("admin@admin.fr");
-		  $admin->setPassword($this->passwordEncoder->encodePassword(
+		  $admin->setPassword($this->passwordHasher->hashPassword(
             $admin,
             'admin'         ));
          $roles[] = 'ROLE_ADMIN';         
@@ -47,5 +48,6 @@ class AppFixtures extends Fixture
          $test2->setNom("Barrière immatérielle et enceinte");
          $manager->persist($test2);
         $manager->flush();
+        
     }
 }

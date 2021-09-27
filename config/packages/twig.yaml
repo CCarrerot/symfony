@@ -3,3 +3,7 @@ twig:
     form_themes: ['bootstrap_4_layout.html.twig']
     globals:
         mon_parametre_twig: '%app.mon_parametre%'
+    
+when@test:
+    twig:
+        strict_variables: true

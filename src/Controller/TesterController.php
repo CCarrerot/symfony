@@ -14,7 +14,7 @@ class TesterController extends AbstractController
 {
    /**
      * fourni la liste des tests à effectuer
-     * @Route("/tester/liste", name="liste")
+     * @Route("/tester/liste", name="tester_liste")
      * @IsGranted("ROLE_USER")
      */
     public function liste(EntityManagerInterface  $manager)
@@ -34,10 +34,10 @@ class TesterController extends AbstractController
      
    /**
     * affiche les détails du test
-    * @Route("/tester/test/{id}", name="affiche_test",requirements={"numero"="\d+"})
+    * @Route("/tester/test/{id}", name="tester_affiche_test",requirements={"numero"="\d+"})
     * @IsGranted("ROLE_USER")
  */
-    public function test(Test $id)
+    public function affiche(Test $id)
     {
         return $this->render("tester/test.html.twig", ["test" => $id]);
     }
@@ -48,7 +48,7 @@ class TesterController extends AbstractController
      * @Route("/tester/new", name="creer_test")
      * @IsGranted("ROLE_USER")
      */
-     public function creer_test(Request $request,ObjectManager $manager)
+     public function creer_test(Request $request,EntityManagerInterface $manager)
      {
          if($request->getMethod()=="POST")
          {
