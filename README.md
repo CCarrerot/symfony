@@ -14,7 +14,7 @@
      * *symfony console doctrine:migrations:migrate*
      * *symfony console doctrine:fixtures:load*
   
-
+-
 ## Utilisation
  
 * Lancez le serveur symfony : *symfony serve* (si la [cli symfony](https://symfony.com/download) n'est pas installée, saisissez *php -S localhost:8000 -t public*)
