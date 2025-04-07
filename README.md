@@ -26,3 +26,4 @@ Il existe deux utilisateur :
 - *cc@cc.fr* avec comme mot de passe *rascol* qui a des droits simple utilisateur
 
 Le projet a été réalisé avec symfony 5.3 et php 7.4.0
+
