@@ -27,8 +27,4 @@ Il existe deux utilisateur :
 
 Le projet a été réalisé avec symfony 5.3 et php 7.4.0
 
-
---remote change
-
--- local change
-
+#amélioration
