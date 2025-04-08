@@ -18,3 +18,7 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+/.idea/shelf/Changes/shelved.patch
+/.idea/shelf/Changes.xml
+/.idea/php.xml
+/.idea/workspace.xml
