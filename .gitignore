@@ -22,3 +22,6 @@
 /.idea/shelf/Changes.xml
 /.idea/php.xml
 /.idea/workspace.xml
+/.idea/phpunit.xml
+/.idea/vcs.xml
+/migrations/.gitignore
