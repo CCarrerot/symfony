@@ -25,3 +25,8 @@
 /.idea/phpunit.xml
 /.idea/vcs.xml
 /migrations/.gitignore
+/.idea/.gitignore
+/.idea/codeception.xml
+/.idea/modules.xml
+/.idea/phpspec.xml
+/.idea/symfony.iml
